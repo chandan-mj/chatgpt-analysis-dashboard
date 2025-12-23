@@ -51,181 +51,35 @@ st.set_page_config(
 # ==========================================
 # CUSTOM CSS STYLING (Professional Academic Theme - Blue/Gray)
 # ==========================================
-
 def apply_custom_styles():
-    st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
-    
-    /* Main app styling */
-    .stApp {
-        font-family: 'Source Sans Pro', sans-serif;
-    }
-    
-    /* Header styling */
-    .main-header {
-        background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-        padding: 2rem;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
-    }
-    
-    .main-header h1 {
-        color: #ffffff;
-        font-size: 2rem;
-        font-weight: 700;
-        margin: 0;
-    }
-    
-    .main-header p {
-        color: #e2e8f0;
-        font-size: 1rem;
-        margin-top: 0.5rem;
-    }
-    
-    /* Login card styling */
-    .login-card {
-        background: #ffffff;
-        padding: 2.5rem;
-        border-radius: 16px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
-        max-width: 420px;
-        margin: 2rem auto;
-        border: 1px solid #e2e8f0;
-    }
-    
-    .login-card h2 {
-        color: #1e3a5f;
-        text-align: center;
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-        font-weight: 600;
-    }
-    
-    /* Metric cards */
-    .metric-card {
-        background: #ffffff;
-        padding: 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        border-left: 4px solid #2c5282;
-        margin-bottom: 1rem;
-    }
-    
-    .metric-card h3 {
-        color: #4a5568;
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin: 0;
-    }
-    
-    .metric-card .value {
-        color: #1e3a5f;
-        font-size: 2rem;
-        font-weight: 700;
-        margin-top: 0.5rem;
-    }
-    
-    /* Section headers */
-    .section-header {
-        color: #1e3a5f;
-        font-size: 1.25rem;
-        font-weight: 600;
-        padding-bottom: 0.75rem;
-        border-bottom: 2px solid #e2e8f0;
-        margin-bottom: 1.5rem;
-    }
-    
-    /* Sidebar styling */
-    .css-1d391kg, [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #1e3a5f 0%, #2c5282 100%);
-    }
-    
-    [data-testid="stSidebar"] .stMarkdown {
-        color: #ffffff;
-    }
-    
-    /* Button styling */
-    .stButton > button {
-        background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
-        color: white;
-        border: none;
-        padding: 0.75rem 2rem;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        width: 100%;
-    }
-    
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(44, 82, 130, 0.4);
-    }
-    
-    /* DataFrames */
-    .dataframe {
-        font-size: 0.875rem;
-    }
-    
-    /* Alert boxes */
-    .stAlert {
-        border-radius: 8px;
-    }
-    
-    /* Success message */
-    .success-msg {
-        background: #c6f6d5;
-        color: #22543d;
-        padding: 1rem;
-        border-radius: 8px;
-        text-align: center;
-        margin: 1rem 0;
-    }
-    
-    /* Error message */
-    .error-msg {
-        background: #fed7d7;
-        color: #c53030;
-        padding: 1rem;
-        border-radius: 8px;
-        text-align: center;
-        margin: 1rem 0;
-    }
-    
-    /* Info box */
-    .info-box {
-        background: #ebf8ff;
-        border-left: 4px solid #2c5282;
-        padding: 1rem;
-        border-radius: 0 8px 8px 0;
-        margin: 1rem 0;
-    }
-    
-    /* Hide Streamlit branding */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    
-    /* Tab styling */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
-    }
-    
-    .stTabs [data-baseweb="tab"] {
-        background: #f7fafc;
-        border-radius: 8px 8px 0 0;
-        padding: 0.75rem 1.5rem;
-        color: #4a5568;
-    }
-    
-    .stTabs [aria-selected="true"] {
-        background: #2c5282;
-        color: white;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    st.markdown(
+        """
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+        /* Hide empty header */
+        .main-header:empty {
+            display: none;
+        }
+
+        /* Main app styling */
+        .stApp {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        /* Header styling */
+        .main-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 # ==========================================
 # DATA LOADING & PROCESSING
@@ -347,10 +201,11 @@ def render_login_page(df):
     # Header
     st.markdown("""
     <div class="main-header">
-        <h1>Student & Teacher Login Portal</h1>
-        <p>Analyzing the Role of ChatGPT in Enhancing Programming Skills</p>
+        <h1>Welcome Back</h1>
+        <p>Login to ChatGPT Analysis Dashboard</p>
     </div>
     """, unsafe_allow_html=True)
+
     
     # Center the login form
     col1, col2, col3 = st.columns([1, 2, 1])
